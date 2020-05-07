@@ -1,0 +1,3 @@
+ls
+docker images
+exit
