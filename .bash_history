@@ -1,3 +1,0 @@
-ls
-docker images
-exit
