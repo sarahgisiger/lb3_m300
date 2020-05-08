@@ -5,13 +5,17 @@ services:
     image: registry
     ports:
     - "5000:5000"
+    #in diesem Verzeichnis werden die Daten für die Registry gespeichert
     environment:
       REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
+    #dafür wird ebenfalls ein Volume erstellt
     volumes:
       - ./data:/data
 
   web:
+    #'localhost:5000' wird benötigt wenn man diesen Container ins Registry schieben möchte
     image: localhost:5000/webserver
+    #in diesem Pfad liegt das Dockerfile & index.html
     build: ./web
     container_name: webserver
     restart: always
@@ -22,6 +26,7 @@ services:
 
   db:
     image: mysql
+    #hier wird das root Passwort gesetzt & es wird eine DB namens 'lb3' erstellt
     environment:
       MYSQL_ROOT_PASSWORD: Test123
       MYSQL_DATABASE: lb3
@@ -29,6 +34,7 @@ services:
       - "3306:3306"
 
   admin:
+    #durch adminer kann man MySQL im Browser öffnen
     image: adminer
     ports:
       - "8000:8080"
