@@ -3,6 +3,7 @@
 **Modul 300:** Plattformübergreifende Dienste in ein Netzwerk integrieren
 
 **Autor:** Sarah Gisiger
+
 **Datum:** 08.05.20
 
 ## Anleitung
@@ -35,7 +36,7 @@ Nachfolgend wird zuerst das Vagrantfile und anschliessend die Files zu Docker be
 
 #### Vorgehen
 > Damit bei der Eingabe von 'vagrant up' docker-compose ebenfalls mitgestartet wird, habe ich folgende Zeile mit in Vagrantfile geschrieben:
-> config.vm.provision :docker_compose , yml: "/home/vagrant/docker-compose.yml", run: "always"
+> **config.vm.provision :docker_compose , yml: "/home/vagrant/docker-compose.yml", run: "always"**
 
 #### Code
 ```css
@@ -72,7 +73,8 @@ end
 > Im Docker Compose File stehen alle Services drinnen. 
 
 #### Vorgehen
-> Damit man 'webserver' in die Registry pushen kann, muss man den Eintrag folgendermassen mache: 'image:  **localhost:5000**/webserver'
+> Damit man 'webserver' in die Registry pushen kann, muss man den Eintrag folgendermassen mache: 
+>'image:  **localhost:5000**/webserver'
 
 #### Code
 ```css
@@ -159,14 +161,23 @@ EXPOSE 80
 
 ## Bilder
 ![](./Bilder/registry_leer.png "Registry leer")
+
+
 ![](./Bilder/registry_voll.png "Registry befüllt")
+
+
 ![](./Bilder/webseite.png "index.html")
+
+
 ![](./Bilder/db.png "DB")
 
 ## Links zu Docker Hub
 [https://hub.docker.com/_/registry](https://hub.docker.com/_/registry)
+
 [https://hub.docker.com/_/httpd](https://hub.docker.com/_/httpd)
+
 [https://hub.docker.com/_/mysql](https://hub.docker.com/_/mysql)
+
 [https://hub.docker.com/_/adminer](https://hub.docker.com/_/adminer)
 
 ## Links
