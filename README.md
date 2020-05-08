@@ -36,7 +36,7 @@ Nachfolgend wird zuerst das Vagrantfile und anschliessend die Files zu Docker be
 
 #### Vorgehen
 > Damit bei der Eingabe von 'vagrant up' docker-compose ebenfalls mitgestartet wird, habe ich folgende Zeile mit in Vagrantfile geschrieben:
-> **config.vm.provision :docker_compose , yml: "/home/vagrant/docker-compose.yml", run: "always"**
+**config.vm.provision :docker_compose , yml: "/home/vagrant/docker-compose.yml", run: "always"**
 
 #### Code
 ```css
@@ -74,7 +74,7 @@ end
 
 #### Vorgehen
 > Damit man 'webserver' in die Registry pushen kann, muss man den Eintrag folgendermassen mache: 
->'image:  **localhost:5000**/webserver'
+'image:  **localhost:5000**/webserver'
 
 #### Code
 ```css
@@ -160,15 +160,18 @@ EXPOSE 80
 ```
 
 ## Bilder
+### registry
 ![](./Bilder/registry_leer.png "Registry leer")
 
 
 ![](./Bilder/registry_voll.png "Registry befüllt")
 
 
+### httpd
 ![](./Bilder/webseite.png "index.html")
 
 
+### mysql & adminer
 ![](./Bilder/db.png "DB")
 
 ## Links zu Docker Hub
